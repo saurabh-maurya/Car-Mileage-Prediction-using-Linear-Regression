@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Mileage Prediction</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<style>
+		body  {
+  			background-color: #E8F5FF;
+  			background-repeat: no-repeat;
+  			background-size: auto;
+		}
+	</style>
+</head>
+
+
+<body> 
+	<nav class="navbar navbar-dark bg-dark">
+	  <a class="navbar-brand" href="https://mauryasaurabh.000webhostapp.com/" target="_blank">Saurabh Maurya</a>
+	</nav>
+	<br>
+	<h6 class="text-center">Predict Your Car Mileage Instantly</h6>
+	<hr>
+	<div class="col-md-4"> 
+		<p class="text-left"><strong>Enter Your Car's Detail :</strong></p>
+	</div>
+	<form action="predictMileage" method="POST">
+		{% csrf_token %}
+		<div class="form-group row col-md">
+    		<label for="fname" class="col-md-2 col-form-label">Cylinders</label>
+    		<div class="col-md-2">
+      			<input type="number" step="any" class="form-control" name="cylinderVal" value={{data.cylinders}} required>
+    		</div>
+  		</div>
+  		<div class="form-group row col-md">
+    		<label for="lname" class="col-md-2 col-form-label">Displacement</label>
+    		<div class="col-md-2">
+      			<input type="number" step="any" class="form-control" name="dispVal" value={{data.displacement}} required>
+    		</div>
+  		</div>
+  		<div class="form-group row col-md">
+    		<label for="lname" class="col-md-2 col-form-label">Horsepower</label>
+    		<div class="col-md-2">
+      			<input type="number" step="any" class="form-control" name="hrsPwrVal" value={{data.horsepower}} required>
+    		</div>
+  		</div>
+  		<div class="form-group row col-md">
+    		<label for="lname" class="col-2 col-form-label">Weight</label>
+    		<div class="col-md-2">
+      			<input type="number" step="any" class="form-control" name="weightVal" value={{data.weight}} required>
+    		</div>
+    		<div class="col-md-6">
+    			{{val}}
+    		</div>
+  		</div>
+  		<div class="form-group row col-md">
+    		<label for="lname" class="col-md-2 col-form-label">Acceleration</label>
+    		<div class="col-md-2">
+      			<input type="number" step="any"class="form-control" name="accVal" value={{data.acceleration}} required>
+    		</div>
+  		</div>
+  		<div class="form-group row col-md">
+    		<label for="lname" class="col-md-2 col-form-label">Model Year</label>
+    		<div class="col-md-2">
+      			<input type="number" step="any" class="form-control" name="modelVal" value={{year}} required>
+    		</div>
+  		</div>
+  		<div class="form-group row col-md">
+    		<label for="lname" class="col-md-2 col-form-label">Origin</label>
+    		<div class="col-md-2">
+      			<input type="number" step="any" class="form-control" name="originVal" value={{data.origin}} required>
+    		</div>
+  		</div>
+  		<div class="col-md-4">
+  			<label for="lname" class="col-md-4 col-form-label"></label>
+  			<input type="submit" class="btn btn-outline-success float-md-right" value="Predict">
+  		</div>
+	</form>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
